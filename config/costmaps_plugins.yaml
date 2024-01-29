@@ -1,0 +1,15 @@
+/**: # in all namespaces, all nodes
+    ros__parameters:
+      footprint: "[ [0.725, 0.525], [0.725, -0.525], [-0.725, -0.525], [-0.725, 0.525] ]"
+      # robot_radius: 0.525
+      footprint_padding: 0.12
+
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+        map_topic: "/map_amcl"
+
+      inflation_layer_global:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.7
+        inflation_radius: 3.0
