@@ -54,6 +54,7 @@ def generate_launch_description():
                 name="lifecycle_manager_map_server_amcl",
                 parameters=[
                     {"use_sim_time": use_sim_time},
+                    {"bond_timeout": 0.0},
                     {
                         "autostart": True
                     },
@@ -109,7 +110,11 @@ def generate_launch_description():
                 name="lifecycle_manager_navigation",
                 output="screen",
                 arguments=["--ros-args", "--log-level", log_level],
-                parameters=[{"autostart": True}, {"node_names": lifecycle_nodes}],
+                parameters=[
+                    {"autostart": True},
+                    {"node_names": lifecycle_nodes},
+                    {"bond_timeout": 0.0},
+                ],
             ),
             Node(
                 package="planner_playground",
