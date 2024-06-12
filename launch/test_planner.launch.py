@@ -9,7 +9,6 @@ from launch_ros.actions import Node, SetParameter
 
 
 def generate_launch_description():
-    # Get the launch directory
     use_sim_time = LaunchConfiguration("use_sim_time", default="false")
     log_level = LaunchConfiguration("log_level")
 
