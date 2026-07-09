@@ -33,7 +33,13 @@ set(dependencies
 
 # test helper
 add_executable(test_planner_with_rviz_node src/test_planner_with_rviz_node.cpp)
-ament_target_dependencies(test_planner_with_rviz_node ${dependencies})
+target_link_libraries(test_planner_with_rviz_node
+  rclcpp::rclcpp
+  rclcpp_action::rclcpp_action
+  ${action_msgs_TARGETS}
+  ${nav2_msgs_TARGETS}
+  ${geometry_msgs_TARGETS}
+)
 
 
 if(BUILD_TESTING)
